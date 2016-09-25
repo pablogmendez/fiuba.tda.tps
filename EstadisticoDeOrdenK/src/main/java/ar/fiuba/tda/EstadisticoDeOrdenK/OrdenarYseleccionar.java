@@ -1,4 +1,4 @@
-package estadisticoDeOrdenK;
+package ar.fiuba.tda.EstadisticoDeOrdenK;
 
 public final class OrdenarYseleccionar extends Algoritmos {
 

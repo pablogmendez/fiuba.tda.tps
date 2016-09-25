@@ -1,4 +1,4 @@
-package estadisticoDeOrdenK;
+package ar.fiuba.tda.EstadisticoDeOrdenK;
 
 public class Kheapsort extends Algoritmos {
 

@@ -1,4 +1,4 @@
-package estadisticoDeOrdenK;
+package ar.fiuba.tda.EstadisticoDeOrdenK;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
