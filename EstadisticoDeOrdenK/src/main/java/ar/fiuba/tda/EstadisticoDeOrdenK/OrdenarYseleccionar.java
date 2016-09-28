@@ -2,24 +2,6 @@ package ar.fiuba.tda.EstadisticoDeOrdenK;
 
 public final class OrdenarYseleccionar extends Algoritmos {
 
-	@Override
-	public int minimo(int[] array) {
-		quickSort(0, array.length - 1, array);
-		return array[0];
-	}
-
-	@Override
-	public int maximo(int[] array) {
-		quickSort(0, array.length - 1, array);
-		return array[array.length - 1];
-	}
-
-	@Override
-	public int mediana(int[] array) {
-		quickSort(0, array.length - 1, array);
-		return array[array.length/2];
-	}
-
 	private void quickSort(int lowerIndex, int higherIndex, int[] array) {
         
         int i = lowerIndex;
@@ -45,5 +27,11 @@ public final class OrdenarYseleccionar extends Algoritmos {
         if (i < higherIndex)
             quickSort(i, higherIndex, array);
     }
+
+	@Override
+	public int calcularEstadistico(int[] array, int k) {
+		quickSort(0, array.length - 1, array);
+		return array[k];
+	}
 	
 }

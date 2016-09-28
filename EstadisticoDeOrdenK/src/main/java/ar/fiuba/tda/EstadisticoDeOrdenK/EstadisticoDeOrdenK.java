@@ -1,5 +1,6 @@
 package ar.fiuba.tda.EstadisticoDeOrdenK;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -26,99 +27,48 @@ public class EstadisticoDeOrdenK {
 		
 		if (args[0] == "fb") {
 			Algoritmos algoritmo = new FuerzaBruta();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
+			int candidato = Integer.parseInt(args[3]);
+			boolean encontrado = false;
+			int k = 0;
+			while(k < intarray.length && !encontrado) {
+				int estadistico = algoritmo.calcularEstadistico(intarray, k);
+				encontrado = (candidato == estadistico);
+				++k;
 			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
+			if(encontrado) {
+				System.out.println("Candidato " + candidato + "encontrado");
+				System.out.println("Orden estadistico " + (k-1));
 			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}
-		}
-		else if (args[0] == "hs") {
-			Algoritmos algoritmo = new FuerzaBruta();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
-			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
-			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}			
-		}
-		else if (args[0] == "kh") {
-			Algoritmos algoritmo = new Kheapsort();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
-			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
-			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}			
-		}
-		else if (args[0] == "ks") {
-			Algoritmos algoritmo = new Kselecciones();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
-			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
-			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}			
 		}
 		else if (args[0] == "os") {
 			Algoritmos algoritmo = new OrdenarYseleccionar();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
-			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
-			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}			
+			int k = Integer.parseInt(args[3]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);
+		}
+		else if (args[0] == "ks") {
+			Algoritmos algoritmo = new Kselecciones();
+			int k = Integer.parseInt(args[3]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);	
+		}
+		else if (args[0] == "kh") {
+			Algoritmos algoritmo = new Kheapsort();	
+			int k = Integer.parseInt(args[3]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);	
+		}
+		else if (args[0] == "hs") {
+			Algoritmos algoritmo = new HeapSelect();
+			int k = Integer.parseInt(args[3]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);	
 		}
 		else if (args[0] == "qs") {
 			Algoritmos algoritmo = new QuickSelect();
-			if (args[1] == "min") {
-				algoritmo.minimo(intarray);
-			}
-			else if (args[0] == "mid") {
-				algoritmo.mediana(intarray);
-			}
-			else if (args[0] == "max") {
-				algoritmo.maximo(intarray);
-			}
-			else {
-				displayHelp();
-				System.exit(0);
-			}			
+			int k = Integer.parseInt(args[3]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);	
 		}
 		else {
 			displayHelp();

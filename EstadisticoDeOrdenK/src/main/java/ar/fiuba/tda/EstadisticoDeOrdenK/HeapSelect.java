@@ -2,22 +2,8 @@ package ar.fiuba.tda.EstadisticoDeOrdenK;
 
 public class HeapSelect extends Algoritmos {
 
-	@Override
-	public int minimo(int[] array) {
-		return heapselect(array, 0);
-	}
-
-	@Override
-	public int maximo(int[] array) {
-		return heapselect(array, array.length - 1);
-	}
-
-	@Override
-	public int mediana(int[] array) {
-		return heapselect(array, array.length/2);
-	}
-
-	 public int heapselect(int A[], int k) {
+	@Override	
+	 public int calcularEstadistico(int A[], int k) {
 		  int last = A.length - 1;
 		  //convert array to heap in O(n)
 		  int youngestParent = last / 2;//l = 2*p+1: p=(l-1)/2
@@ -50,4 +36,5 @@ public class HeapSelect extends Algoritmos {
 		    }
 		  }
 		}
+
 }

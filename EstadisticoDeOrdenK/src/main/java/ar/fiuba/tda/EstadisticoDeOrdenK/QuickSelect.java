@@ -3,18 +3,8 @@ package ar.fiuba.tda.EstadisticoDeOrdenK;
 public class QuickSelect extends Algoritmos {
 
 	@Override
-	public int minimo(int[] array) {
-		return quickSelect(array, 0, array.length - 1, 0);
-	}
-
-	@Override
-	public int maximo(int[] array) {
-		return quickSelect(array, 0, array.length - 1, array.length - 1);
-	}
-
-	@Override
-	public int mediana(int[] array) {
-		return quickSelect(array, 0, array.length - 1, array.length/2);
+	public int calcularEstadistico(int[] array, int k) {
+		return quickSelect(array, 0, array.length - 1, k);
 	}
 	
   	private static int quickSelect(int[] array, int left, int right, int n) {
@@ -52,6 +42,7 @@ public class QuickSelect extends Algoritmos {
   	
 	private static int randomPivot(int left, int right) {
 		return left + (int) Math.floor(Math.random() * (right - left + 1));
-	}	
+	}
+
 	
 }
