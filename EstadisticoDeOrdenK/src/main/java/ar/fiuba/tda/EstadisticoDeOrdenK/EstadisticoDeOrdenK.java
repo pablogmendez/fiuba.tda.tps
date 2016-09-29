@@ -7,8 +7,9 @@ import java.util.StringTokenizer;
 public class EstadisticoDeOrdenK {
 
 	public static void main(String[] args) {
-		if(args.length < 1 || args.length > 3) {
+		if(args.length < 1 || args.length > 4) {
 			displayHelp();
+			System.out.println("HOLA");
 			System.exit(0);
 		} 
 		
@@ -25,48 +26,63 @@ public class EstadisticoDeOrdenK {
 			i++;
 		}
 		
-		if (args[0] == "fb") {
-			Algoritmos algoritmo = new FuerzaBruta();
-			int candidato = Integer.parseInt(args[3]);
-			boolean encontrado = false;
-			int k = 0;
-			while(k < intarray.length && !encontrado) {
-				int estadistico = algoritmo.calcularEstadistico(intarray, k);
-				encontrado = (candidato == estadistico);
-				++k;
-			}
-			if(encontrado) {
-				System.out.println("Candidato " + candidato + "encontrado");
-				System.out.println("Orden estadistico " + (k-1));
-			}
+		for(int k = 0; k < intarray.length; ++k) {
+			System.out.println(intarray[k]);	
 		}
-		else if (args[0] == "os") {
+		
+		
+		if (args[0].compareTo("fb") == 0) {
+			System.out.println("fb");
+			Algoritmos algoritmo = new FuerzaBruta();
+			int candidato = Integer.parseInt(args[1]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, candidato);
+			System.out.println("Candidato " + candidato + " encontrado");
+			System.out.println("Orden estadistico " + estadistico);
+//			boolean encontrado = false;
+//			int k = 0;
+//			while(k < intarray.length && !encontrado) {
+//				int estadistico = algoritmo.calcularEstadistico(intarray, k);
+//				System.out.println(estadistico);
+//				encontrado = (candidato == estadistico);
+//				++k;
+//			}
+//			if(encontrado) {
+//				System.out.println("Candidato " + candidato + " encontrado");
+//				System.out.println("Orden estadistico " + (k-1));
+//			}
+		}
+		else if (args[0].compareTo("os") == 0) {
+			System.out.println("os");
 			Algoritmos algoritmo = new OrdenarYseleccionar();
-			int k = Integer.parseInt(args[3]);
+			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);
 		}
-		else if (args[0] == "ks") {
+		else if (args[0].compareTo("ks") == 0) {
+			System.out.println("ks");
 			Algoritmos algoritmo = new Kselecciones();
-			int k = Integer.parseInt(args[3]);
+			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
-		else if (args[0] == "kh") {
+		else if (args[0].compareTo("kh") == 0) {
+			System.out.println("kh");
 			Algoritmos algoritmo = new Kheapsort();	
-			int k = Integer.parseInt(args[3]);
+			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
-		else if (args[0] == "hs") {
+		else if (args[0].compareTo("hs") == 0) {
+			System.out.println("hs");
 			Algoritmos algoritmo = new HeapSelect();
-			int k = Integer.parseInt(args[3]);
+			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
-		else if (args[0] == "qs") {
+		else if (args[0].compareTo("qs") == 0) {
+			System.out.println("qs");
 			Algoritmos algoritmo = new QuickSelect();
-			int k = Integer.parseInt(args[3]);
+			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
@@ -91,14 +107,12 @@ public class EstadisticoDeOrdenK {
 		System.out.println("		os: Ordenar y Seleccionar");
 		System.out.println("		qs: Quick Select");
 		System.out.println(" ");
-		System.out.println("	K: Orden del algoritmo");
-		System.out.println("		min: Calcula el estadistico de orden 0");
-		System.out.println("		mid: Calcula la mediana");
-		System.out.println("		max: Calcula el estadistico de mayor orden");
+		System.out.println("	K: Candidato (para fb) / Orden del algoritmo (para el resto)");
 		System.out.println(" ");
 		System.out.println("	VECTOR: Vector a aplicar el algoritmo");
 		System.out.println(" ");
 		System.out.println("Ejemplo:");
-		System.out.println("	java -jar EstadisticoDeOrdenK.jar fb min \"3 5 89 55 164 42 0 77 911 22\"");
+		System.out.println("	java -jar EstadisticoDeOrdenK.jar fb 0 \"3 5 89 55 164 42 0 77 911 22\"");
+		System.out.println("	java -jar EstadisticoDeOrdenK.jar hs 4 \"3 5 89 55 164 42 0 77 911 22\"");
 	}
 }
