@@ -26,33 +26,22 @@ public class EstadisticoDeOrdenK {
 			i++;
 		}
 		
-		for(int k = 0; k < intarray.length; ++k) {
-			System.out.println(intarray[k]);	
-		}
-		
 		
 		if (args[0].compareTo("fb") == 0) {
-			System.out.println("fb");
+			System.out.println("Algoritmo: Fuerza Bruta");
 			Algoritmos algoritmo = new FuerzaBruta();
 			int candidato = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, candidato);
-			System.out.println("Candidato " + candidato + " encontrado");
-			System.out.println("Orden estadistico " + estadistico);
-//			boolean encontrado = false;
-//			int k = 0;
-//			while(k < intarray.length && !encontrado) {
-//				int estadistico = algoritmo.calcularEstadistico(intarray, k);
-//				System.out.println(estadistico);
-//				encontrado = (candidato == estadistico);
-//				++k;
-//			}
-//			if(encontrado) {
-//				System.out.println("Candidato " + candidato + " encontrado");
-//				System.out.println("Orden estadistico " + (k-1));
-//			}
+			if (estadistico < 0) {
+				System.out.println("Candidato " + candidato + " NO encontrado");
+			}
+			else {
+				System.out.println("Candidato " + candidato + " encontrado");
+				System.out.println("Orden estadistico " + estadistico);	
+			}
 		}
 		else if (args[0].compareTo("os") == 0) {
-			System.out.println("os");
+			System.out.println("Algoritmo: Ordenar y Seleccionar");
 			Algoritmos algoritmo = new OrdenarYseleccionar();
 			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
@@ -66,21 +55,21 @@ public class EstadisticoDeOrdenK {
 			System.out.println("Estadistico " + estadistico);	
 		}
 		else if (args[0].compareTo("kh") == 0) {
-			System.out.println("kh");
+			System.out.println("Algoritmo: K-Heapsort");
 			Algoritmos algoritmo = new Kheapsort();	
 			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
 		else if (args[0].compareTo("hs") == 0) {
-			System.out.println("hs");
+			System.out.println("Algoritmo: Heap Select");
 			Algoritmos algoritmo = new HeapSelect();
 			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
 			System.out.println("Estadistico " + estadistico);	
 		}
 		else if (args[0].compareTo("qs") == 0) {
-			System.out.println("qs");
+			System.out.println("Algoritmo: Quick Select");
 			Algoritmos algoritmo = new QuickSelect();
 			int k = Integer.parseInt(args[1]);
 			int estadistico = algoritmo.calcularEstadistico(intarray, k);
