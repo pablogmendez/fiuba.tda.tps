@@ -26,11 +26,13 @@ public class Digrafo {
 	}
 
 	/* Itera sobre los aristas incidentes _desde_ v */
-	public void adj_e(int v) {
+	public Arista[] adj_e(int v) {
+		return null;
 	}
 
 	/* Itera sobre los vértices adyacentes a ‘v’ */
-	public void adj(int v) {
+	public int[] adj(int v) {
+		return null;
 
 	}
 
