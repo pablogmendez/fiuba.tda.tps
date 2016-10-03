@@ -3,34 +3,32 @@ package ar.fiuba.tda.RecorridoEnGrafos;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import javax.management.Query;
-
 public class BFS extends Camino {
 
 	private double dist[]; // Inicializar a +∞.
 	private Arista edge[];
 	private boolean marked[];
-	
+
 	public BFS(Digrafo g, int origen, int destino) {
 		super(g, origen, destino);
-		
+
 		// Creo la cola
 		Queue<Integer> q = new LinkedList<Integer>();
-		
+
 		// Inicializo las distancias a infinito
 		dist = new double[g.V()];
 		marked = new boolean[g.V()];
-		for(int i = 0; i < dist.length; ++i)
+		for (int i = 0; i < dist.length; ++i)
 			dist[i] = Double.POSITIVE_INFINITY;
-		
+
 		// Inicializo el vector de aristas
 		edge = new Arista[g.V()];
-		
+
 		dist[origen] = 0;
 		marked[origen] = true;
 		q.add(origen);
-		
-		while(!q.isEmpty()) {
+
+		while (!q.isEmpty()) {
 			int v = q.remove();
 			int i = -1;
 			int w = 0;
@@ -42,7 +40,7 @@ public class BFS extends Camino {
 				dist[w] = distancia(v) + 1;
 				marked[w] = true;
 				q.add(w);
-			} while(i < adj.length && w != destino);
+			} while (i < adj.length && w != destino);
 		}
 	}
 
