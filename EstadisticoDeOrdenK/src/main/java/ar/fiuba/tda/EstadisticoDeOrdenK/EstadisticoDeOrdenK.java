@@ -30,15 +30,9 @@ public class EstadisticoDeOrdenK {
 		if (args[0].compareTo("fb") == 0) {
 			System.out.println("Algoritmo: Fuerza Bruta");
 			Algoritmos algoritmo = new FuerzaBruta();
-			int candidato = Integer.parseInt(args[1]);
-			int estadistico = algoritmo.calcularEstadistico(intarray, candidato);
-			if (estadistico < 0) {
-				System.out.println("Candidato " + candidato + " NO encontrado");
-			}
-			else {
-				System.out.println("Candidato " + candidato + " encontrado");
-				System.out.println("Orden estadistico " + estadistico);	
-			}
+			int k = Integer.parseInt(args[1]);
+			int estadistico = algoritmo.calcularEstadistico(intarray, k);
+			System.out.println("Estadistico " + estadistico);
 		}
 		else if (args[0].compareTo("os") == 0) {
 			System.out.println("Algoritmo: Ordenar y Seleccionar");
