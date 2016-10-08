@@ -12,7 +12,7 @@ public class HeapSelect extends Algoritmos {
 		  }
 		  //sort up to k (i.e. find the kth)
 		  int limit = last - k + 1;
-		  for (int i = last; i > limit; i--) {
+		  for (int i = last; i > k; i--) {
 		    if (A[0] > A[i]) {
 		      swap(0, i, A);
 		      moveDown(A, 0, i - 1);
