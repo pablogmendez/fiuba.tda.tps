@@ -1,5 +1,6 @@
 #!/bin/bash
 rm estadisticas.out
+rm estadisticas.err
 ./estadisticas.sh 5 2>estadisticas.err
 cat estadisticas.err | grep user >> estadisticas.out
 ./estadisticas.sh 10 2>estadisticas.err
@@ -16,7 +17,7 @@ cat estadisticas.err | grep user >> estadisticas.out
 cat estadisticas.err | grep user >> estadisticas.out
 ./estadisticas.sh 10000 2>estadisticas.err
 cat estadisticas.err | grep user >> estadisticas.out
-./estadisticas.sh 50000 2>estadisticas.err
+./estadisticas.sh 15000 2>estadisticas.err
 cat estadisticas.err | grep user >> estadisticas.out
-./estadisticas.sh 100000 2>estadisticas.err
+./estadisticas.sh 20000 2>estadisticas.err
 cat estadisticas.err | grep user >> estadisticas.out
