@@ -20,6 +20,9 @@ public class Digrafo {
 	public Digrafo(int V) {
 		assert (V > 0);
 		adjacents = (ArrayList<Arista>[]) (new ArrayList[V]);
+		for (int i = 0; i < adjacents.length; i++) {
+			adjacents[i] = new ArrayList<Arista>();
+		}
 		this.E = 0;
 	}
 
