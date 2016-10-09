@@ -1,6 +1,7 @@
 package ar.fiuba.tda.RecorridoEnGrafos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Digrafo {
 	/*
@@ -39,7 +40,14 @@ public class Digrafo {
 	/* Itera sobre los aristas incidentes _desde_ v */
 	public Arista[] adj_e(int v) {
 		assert (v >= 0 && v < adjacents.length);
-		return (Arista[]) adjacents[v].toArray();
+		Arista[] aristas = new Arista[adjacents[v].size()];
+		int i = 0;
+		Iterator<Arista> it = adjacents[v].iterator();
+		while(it.hasNext()) {
+			aristas[i] = it.next();
+			++i;
+		}
+		return aristas;
 	}
 
 	/* Itera sobre los vértices adyacentes a ‘v’ */
