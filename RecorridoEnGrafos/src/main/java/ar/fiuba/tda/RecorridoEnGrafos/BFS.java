@@ -6,7 +6,6 @@ import java.util.Queue;
 public class BFS extends Camino {
 
 	private double dist[]; // Inicializar a +∞.
-	private Arista edge[];
 	private boolean marked[];
 
 	public BFS(Digrafo g, int origen, int destino) {
@@ -33,14 +32,18 @@ public class BFS extends Camino {
 			int i = -1;
 			int w = 0;
 			int adj[] = g.adj(v);
-			do {
-				++i;
-				w = adj[i];
-				edge[w] = new Arista(v, w, 1);
-				dist[w] = distancia(v) + 1;
-				marked[w] = true;
-				q.add(w);
-			} while (i < adj.length && w != destino);
+			if(adj.length > 0) {
+				do {
+					++i;
+					w = adj[i];
+					edge[w] = new Arista(v, w, 1);
+					dist[w] = distancia(v) + 1;
+					marked[w] = true;
+					q.add(w);
+				} while (i < adj.length - 1 && w != destino);
+			}
+			if(w == destino)
+				break;
 		}
 	}
 
