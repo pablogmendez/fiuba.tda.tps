@@ -43,7 +43,7 @@ public class BusqConHeuristica extends Camino {
 				dist[w] = distancia(v) + this.h.calcular(w, destino);
 				marked[w] = true;
 				q.add(new VerticeConPrioridad(w, this.h.calcular(w, destino)));
-			} while (i < adj.length && w != destino);
+			} while (i < adj.length -1 && w != destino);
 		}
 	}
 
