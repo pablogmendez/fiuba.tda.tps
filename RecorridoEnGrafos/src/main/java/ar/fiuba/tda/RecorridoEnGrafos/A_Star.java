@@ -3,7 +3,6 @@ package ar.fiuba.tda.RecorridoEnGrafos;
 public class A_Star extends Camino {
 
 	private double dist[]; // Inicializar a +∞.
-	private Arista edge[];
 	private double pred[];
 	private boolean visited[];
 	Heuristica h;
@@ -15,7 +14,8 @@ public class A_Star extends Camino {
 		dist = new double[g.V()];
 		pred = new double[g.V()];
 		visited = new boolean[g.V()];
-
+		edge = new Arista[g.V()];
+		
 		for (int i = 0; i < dist.length; i++) {
 			dist[i] = Double.POSITIVE_INFINITY;
 		}
@@ -44,6 +44,11 @@ public class A_Star extends Camino {
 					pred[v] = next;
 				}
 			}
+		}
+		double i = destino;
+		while(i != origen) {
+			edge[(int)i] = new Arista((int)pred[(int) i], (int)i, (int)dist[(int)i]);
+			i = pred[(int)i];
 		}
 	}
 

@@ -1,9 +1,11 @@
 package ar.fiuba.tda.RecorridoEnGrafos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dijkstra extends Camino {
 
 	private double dist[]; // Inicializar a +∞.
-	private Arista edge[];
 	private double pred[];
 	private boolean visited[];
 
@@ -13,7 +15,8 @@ public class Dijkstra extends Camino {
 		dist = new double[g.V()];
 		pred = new double[g.V()];
 		visited = new boolean[g.V()];
-
+		edge = new Arista[g.V()];
+		
 		for (int i = 0; i < dist.length; i++) {
 			dist[i] = Double.POSITIVE_INFINITY;
 		}
@@ -40,8 +43,14 @@ public class Dijkstra extends Camino {
 				if (dist[v] > d) {
 					dist[v] = d;
 					pred[v] = next;
+					
 				}
 			}
+		}
+		double i = destino;
+		while(i != origen) {
+			edge[(int)i] = new Arista((int)pred[(int) i], (int)i, (int)dist[(int)i]);
+			i = pred[(int)i];
 		}
 	}
 

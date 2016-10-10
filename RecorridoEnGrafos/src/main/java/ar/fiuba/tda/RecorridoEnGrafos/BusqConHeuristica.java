@@ -6,7 +6,7 @@ import java.util.Queue;
 public class BusqConHeuristica extends Camino {
 
 	private double dist[]; // Inicializar a +∞.
-	private Arista edge[];
+//	private Arista edge[];
 	private boolean marked[];
 
 	private Heuristica h;
@@ -36,14 +36,16 @@ public class BusqConHeuristica extends Camino {
 			int i = -1;
 			int w = 0;
 			int adj[] = g.adj(v);
-			do {
-				++i;
-				w = adj[i];
-				edge[w] = new Arista(v, w, 1);
-				dist[w] = distancia(v) + this.h.calcular(w, destino);
-				marked[w] = true;
-				q.add(new VerticeConPrioridad(w, this.h.calcular(w, destino)));
-			} while (i < adj.length -1 && w != destino);
+			if(adj.length > 0) {
+				do {
+					++i;
+					w = adj[i];
+					edge[w] = new Arista(v, w, 1);
+					dist[w] = distancia(v) + this.h.calcular(w, destino);
+					marked[w] = true;
+					q.add(new VerticeConPrioridad(w, this.h.calcular(w, destino)));
+				} while (i < adj.length -1 && w != destino);
+			}
 		}
 	}
 
