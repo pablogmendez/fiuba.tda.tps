@@ -32,14 +32,13 @@ public class ParserDigrafo {
 		// Parseo nodos
 		for (int i = 0; i < V; ++i) {
 			myLine = bufRead.readLine();
-			String[] coordNode = myLine.substring(myLine.indexOf('('), myLine.indexOf(')')).split(",");
+			String[] coordNode = myLine.substring(myLine.indexOf('(') + 1, myLine.indexOf(')')).split(",");
 			heuristica.agregarNodo(i, Integer.parseInt(coordNode[0]), Integer.parseInt(coordNode[1]));
 		}
 
 		// Parseo aristas
 		while ((myLine = bufRead.readLine()) != null) {
-			myLine = bufRead.readLine();
-			String[] e = myLine.substring(myLine.indexOf('['), myLine.indexOf(']')).split(",");
+			String[] e = myLine.substring(myLine.indexOf('[') + 1, myLine.indexOf(']')).split(",");
 			grafo.add_edge(Integer.parseInt(e[0]), Integer.parseInt(e[1]), Integer.parseInt(e[2]));
 		}
 
