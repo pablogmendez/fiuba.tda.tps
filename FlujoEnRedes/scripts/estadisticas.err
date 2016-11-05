@@ -1,0 +1,90 @@
+./estadisticas.sh: line 17: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.016s
+sys	0m0.004s
+./estadisticas.sh: line 18: /usr/bin/java: Argument list too long
+
+real	0m0.024s
+user	0m0.024s
+sys	0m0.000s
+./estadisticas.sh: line 19: /usr/bin/java: Argument list too long
+
+real	0m0.023s
+user	0m0.012s
+sys	0m0.008s
+./estadisticas.sh: line 20: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.024s
+sys	0m0.000s
+./estadisticas.sh: line 21: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.016s
+sys	0m0.004s
+./estadisticas.sh: line 22: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.016s
+sys	0m0.004s
+./estadisticas.sh: line 27: /usr/bin/java: Argument list too long
+
+real	0m0.029s
+user	0m0.024s
+sys	0m0.004s
+./estadisticas.sh: line 28: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.020s
+sys	0m0.000s
+./estadisticas.sh: line 29: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.020s
+sys	0m0.000s
+./estadisticas.sh: line 30: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.024s
+sys	0m0.000s
+./estadisticas.sh: line 31: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.012s
+sys	0m0.008s
+./estadisticas.sh: line 32: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.024s
+sys	0m0.000s
+./estadisticas.sh: line 38: /usr/bin/java: Argument list too long
+
+real	0m0.029s
+user	0m0.028s
+sys	0m0.000s
+./estadisticas.sh: line 39: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.020s
+sys	0m0.000s
+./estadisticas.sh: line 40: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.016s
+sys	0m0.004s
+./estadisticas.sh: line 41: /usr/bin/java: Argument list too long
+
+real	0m0.022s
+user	0m0.020s
+sys	0m0.000s
+./estadisticas.sh: line 42: /usr/bin/java: Argument list too long
+
+real	0m0.029s
+user	0m0.028s
+sys	0m0.000s
+./estadisticas.sh: line 43: /usr/bin/java: Argument list too long
+
+real	0m0.036s
+user	0m0.032s
+sys	0m0.004s
