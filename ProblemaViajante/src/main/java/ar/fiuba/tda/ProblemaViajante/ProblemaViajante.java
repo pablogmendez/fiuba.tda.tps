@@ -16,6 +16,10 @@ public class ProblemaViajante {
 	origen = ciudadOrigen - 1; // Transf idCiudad a indice
 	costos = distancias;
     }
+    
+    public int getCantidadCiudades() {
+	return costos.length;
+    }
 
     /* Retorna costo final */
     public int recorrer() {
