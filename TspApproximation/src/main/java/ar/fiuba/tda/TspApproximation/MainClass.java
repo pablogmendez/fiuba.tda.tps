@@ -23,8 +23,8 @@ public class MainClass {
 						+ " ciudades - Resultado: "
 						+ res.toString()
 						+ " - Tiempo: "
-						+ String.valueOf(TimeUnit.NANOSECONDS.toSeconds(endTime
-								- starTime)) + " sec");
+						+ String.valueOf(TimeUnit.NANOSECONDS.toMillis(endTime
+								- starTime)) + " ms");
 			}
 			catch (Exception e) {
 				e.printStackTrace();
